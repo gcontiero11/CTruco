@@ -1,3 +1,4 @@
+import com.local.aah.refactor.me.RefactorMePleaseBot;
 import com.local.bonelli.noli.paulistabot.PaulistaBot;
 import com.local.brenoduda.cafeconlechebot.CafeConLecheBot;
 import com.local.bueno.impl.dummybot.DummyBot;
@@ -9,7 +10,6 @@ import com.local.hideki.araujo.wrkncacnterbot.WrkncacnterBot;
 import com.local.indi.impl.addthenewsoul.AddTheNewSoul;
 import com.local.newton.dolensi.sabotabot.SabotaBot;
 import com.local.zampieri.rissatti.impl.UncleBobBot.UncleBobBot;
-import com.local.meima.skoltable.SkolTable;
 import com.local.rossi.lopes.trucoguru.TrucoGuru;
 import com.local.correacarini.impl.trucomachinebot.TrucoMachineBot;
 import com.local.everton.ronaldo.arrebentabot.ArrebentaBot;
@@ -21,17 +21,22 @@ import com.local.silvabrufato.impl.silvabrufatobot.SilvaBrufatoBot;
 import com.local.yuri.impl.BotMadeInDescalvado;
 import com.local.gatti.casaque.caipirasbot.CaipirasBot;
 import com.local.gustavo.contiero.lazybot.LazyBot;
-import com.belini.luciano.matapatobot.MataPatoBot;
+import com.local.aislan.deyvin.DeyvinBot;
+import com.local.belini.luciano.matapatobot.MataPatoBot;
 import com.bruno.tiago.jeckiechanbot.JackieChanBot;
 import com.carvalho.candido.tomegapbot.GapBot;
 import com.castro.calicchio.jogasafebot.JogaSafeBot;
+import com.caua.felipe.cfbot.CFBot;
+import com.daniel.mateus.theroverbot.TheRover;
 import com.francisco.bruno.pedrohenriquebot.PedroHenriqueBot;
 import com.gabriel.kayky.coisaruim.CoisaRuim;
 import com.garcia.orlandi.slayerbot.SlayerBot;
 import com.erick.itaipavabot.ItaipavaBot;
 import com.joao.alexandre.jormungandrbot.JormungandrBot;
+import com.kayky.waleska.kwtruco.KwTruco;
 import com.lucasmurilo.m.lazarinipodenciano.Akkosocorrompido;
 import com.luigi.ana.batatafritadobarbot.BatataFritaDoBarBot;
+import com.luigivanzella.triathlonBot.TriathlonBot;
 import com.petrilli.sandro.malasiabot.MalasiaBot;
 import com.soares.gibim.chatgptbot.ChatGptBot;
 import com.pedrocagiovane.pauladasecabot.PauladaSecaBot;
@@ -39,9 +44,9 @@ import com.renato.DarthVader.DarthVader;
 import com.fabio.bruno.minepowerbot.MinePowerBot;
 import com.otavio.lopes.teitasbot.TeitasBot;
 import com.miguelestevan.jakaredumatubot.JakareDuMatuBot;
-import com.barbara.lucasCruz.patriciaAparecida.PatriciaAparecida;
+import com.local.barbara.lucasCruz.patriciaAparecida.PatriciaAparecida;
 import com.Sigoli.Castro.PatoBot.PatoBot;
-import com.antonelli.rufino.bardoalexbot.BarDoAlexBot;
+import com.local.antonelli.rufino.bardoalexbot.BarDoAlexBot;
 import com.shojisilva.fernasbot.FernasBot;
 import com.motta.impl.beepbot.BeepBot;
 import com.contiero.lemes.atrasabot.AtrasaBot;
@@ -49,28 +54,39 @@ import com.lucas.felipe.newbot.NewBot;
 import com.felipe.fabiano.truccard.Truccard;
 import com.murilo.joao.jackbot.JackBot;
 import com.luna.jundi.jokerBot.JokerBot;
-import com.alanIan.casinhadecabloco.CasinhaDeCabloco;
-import com.bernardo.caio.zeusbot.Zeusbot;
+import com.local.alanIan.casinhadecabloco.CasinhaDeCabloco;
+import com.local.bernardo.caio.zeusbot.Zeusbot;
 import com.campos.turazzi.reidozap.ReiDoZap;
-import com.belini.luciano.matapatobot.MataPatoBot;
-import com.brito.macena.boteco.BotEco;
-import com.adriann.emanuel.armageddon.Armageddon;
+import com.local.brito.macena.boteco.BotEco;
+import com.local.adriann.emanuel.armageddon.Armageddon;
 import com.Selin.Bonelli.zetruquero.Zetruquero;
 import com.manhani.stefane.reimubot.ReimuBot;
-import com.adivic.octopus.Octopus;
+import com.local.adivic.octopus.Octopus;
 import com.eduardo.vinicius.camaleaotruqueiro.CamaleaoTruqueiro;
-import com.bianca.joaopedro.lgtbot.Lgtbot;
+import com.local.bianca.joaopedro.lgtbot.Lgtbot;
+import com.fernando.breno.trucomarrecobot.TrucoMarreco;
+import com.rafael.lucas.mestrimbot.Mestrim;
+import com.rennan.podecorrerpatinho.PodeCorrerPatinho;
+import com.local.abel.francisco.fogao6boca.Fogao6Boca;
+import com.matheus.dylan.superidolbot.SuperIdolBot;
 
 module bot.impl {
     requires bot.spi;
+    requires java.compiler;
+    requires java.smartcardio;
+    requires jdk.jdi;
     requires domain;
-
     requires java.net.http;
     requires spring.webflux;
     requires reactor.core;
     requires com.google.gson;
     requires spring.web;
     requires spring.context;
+
+    exports com.pedrocagiovane.pauladasecabot;
+    exports com.local.aah.refactor.me;
+    exports com.francisco.bruno.pedrohenriquebot;
+
 
     exports com.local.bueno.impl.dummybot;
     exports com.local.indi.impl.addthenewsoul;
@@ -81,7 +97,6 @@ module bot.impl {
     exports com.local.hideki.araujo.wrkncacnterbot;
     exports com.local.newton.dolensi.sabotabot;
     exports com.local.brenoduda.cafeconlechebot;
-    exports com.local.meima.skoltable;
     exports com.local.rossi.lopes.trucoguru;
     exports com.local.almeida.strapasson.veiodobar;
     exports com.local.tatayrapha.leonardabot;
@@ -97,12 +112,12 @@ module bot.impl {
     exports com.otavio.lopes.teitasbot;
     exports com.miguelestevan.jakaredumatubot;
     exports com.soares.gibim.chatgptbot;
-    exports com.barbara.lucasCruz.patriciaAparecida;
+    exports com.local.barbara.lucasCruz.patriciaAparecida;
     exports com.Sigoli.Castro.PatoBot;
     exports com.garcia.orlandi.slayerbot;
     exports com.erick.itaipavabot;
     exports com.renato.DarthVader;
-    exports com.antonelli.rufino.bardoalexbot;
+    exports com.local.antonelli.rufino.bardoalexbot;
     exports com.lucas.felipe.newbot;
     exports com.contiero.lemes.atrasabot;
     exports com.shojisilva.fernasbot;
@@ -113,23 +128,32 @@ module bot.impl {
     exports com.luna.jundi.jokerBot;
     exports com.carvalho.candido.tomegapbot;
     exports com.bruno.tiago.jeckiechanbot;
-    exports com.alanIan.casinhadecabloco;
-    exports com.bernardo.caio.zeusbot;
+    exports com.local.alanIan.casinhadecabloco;
+    exports com.local.bernardo.caio.zeusbot;
     exports com.motta.impl.beepbot;
     exports com.campos.turazzi.reidozap;
 
-    exports com.belini.luciano.matapatobot;
-    exports com.brito.macena.boteco;
+    exports com.daniel.mateus.theroverbot;
+    exports com.local.belini.luciano.matapatobot;
+    exports com.local.brito.macena.boteco;
     exports com.Selin.Bonelli.zetruquero;
     exports com.luigi.ana.batatafritadobarbot;
     exports com.manhani.stefane.reimubot;
-    exports com.adivic.octopus;
+    exports com.local.adivic.octopus;
     exports com.eduardo.vinicius.camaleaotruqueiro;
-    exports com.bianca.joaopedro.lgtbot;
-    exports com.adriann.emanuel.armageddon;
+    exports com.local.bianca.joaopedro.lgtbot;
+    exports com.local.adriann.emanuel.armageddon;
     exports com.remote;
-    requires java.compiler;
-    requires java.smartcardio;
+    exports com.kayky.waleska.kwtruco;
+    exports com.fernando.breno.trucomarrecobot;
+
+    exports com.local.aislan.deyvin;
+    exports com.rafael.lucas.mestrimbot;
+    exports com.rennan.podecorrerpatinho;
+    exports com.local.abel.francisco.fogao6boca;
+    exports com.matheus.dylan.superidolbot;
+    exports com.luigivanzella.triathlonBot;
+    exports com.caua.felipe.cfbot;
 
     provides com.bueno.spi.service.BotServiceProvider with
             ArrebentaBot,
@@ -149,7 +173,7 @@ module bot.impl {
             TrucoMachineBot,
             BotMadeInDescalvado,
             TrucoGuru,
-            SkolTable,
+            RefactorMePleaseBot,
             UncleBobBot,
             CafeConLecheBot,
             VapoBot,
@@ -183,6 +207,8 @@ module bot.impl {
             CasinhaDeCabloco,
             BeepBot,
             Zeusbot,
+            ReiDoZap,
+            TheRover,
             MataPatoBot,
             BotEco,
             Armageddon,
@@ -191,6 +217,14 @@ module bot.impl {
             ReimuBot,
             Octopus,
             CamaleaoTruqueiro,
-            ReiDoZap,
-            Lgtbot;
+            Lgtbot,
+            KwTruco,
+            TrucoMarreco,
+            DeyvinBot,
+            Mestrim,
+            PodeCorrerPatinho,
+            Fogao6Boca,
+            CFBot,
+            SuperIdolBot,
+            TriathlonBot;
 }
