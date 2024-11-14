@@ -21,7 +21,7 @@
 /* 'zeTruquero' bot with didactic propose. Code by Lucas Selin and Pedro Bonelli */
 
 package com.Selin.Bonelli;
-import com.Selin.Bonelli.zetruquero.Zetruquero;
+import com.local.Selin.Bonelli.zetruquero.Zetruquero;
 import com.bueno.spi.model.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
