@@ -36,6 +36,7 @@ import com.joao.alexandre.jormungandrbot.JormungandrBot;
 import com.kayky.waleska.kwtruco.KwTruco;
 import com.lucasmurilo.m.lazarinipodenciano.Akkosocorrompido;
 import com.luigi.ana.batatafritadobarbot.BatataFritaDoBarBot;
+import com.pedro.herick.skilldiffbot.SkillDiffBot;
 import com.luigivanzella.triathlonBot.TriathlonBot;
 import com.petrilli.sandro.malasiabot.MalasiaBot;
 import com.soares.gibim.chatgptbot.ChatGptBot;
@@ -57,6 +58,7 @@ import com.luna.jundi.jokerBot.JokerBot;
 import com.local.alanIan.casinhadecabloco.CasinhaDeCabloco;
 import com.local.bernardo.caio.zeusbot.Zeusbot;
 import com.campos.turazzi.reidozap.ReiDoZap;
+import com.giullia.marcio.trucomante.Trucomante;
 import com.local.brito.macena.boteco.BotEco;
 import com.local.adriann.emanuel.armageddon.Armageddon;
 import com.Selin.Bonelli.zetruquero.Zetruquero;
@@ -65,6 +67,8 @@ import com.local.adivic.octopus.Octopus;
 import com.eduardo.vinicius.camaleaotruqueiro.CamaleaoTruqueiro;
 import com.local.bianca.joaopedro.lgtbot.Lgtbot;
 import com.fernando.breno.trucomarrecobot.TrucoMarreco;
+import com.fhelippe.ana.tiaodotruco.TiaoDoTruco;
+import com.gusmao.matos.clojurebot.ClojureBot;
 import com.rafael.lucas.mestrimbot.Mestrim;
 import com.rennan.podecorrerpatinho.PodeCorrerPatinho;
 import com.local.abel.francisco.fogao6boca.Fogao6Boca;
@@ -83,11 +87,11 @@ module bot.impl {
     requires spring.web;
     requires spring.context;
 
+    exports com.giullia.marcio.trucomante;
+    exports com.caua.felipe.cfbot;
     exports com.pedrocagiovane.pauladasecabot;
     exports com.local.aah.refactor.me;
     exports com.francisco.bruno.pedrohenriquebot;
-
-
     exports com.local.bueno.impl.dummybot;
     exports com.local.indi.impl.addthenewsoul;
     exports com.local.hermespiassi.casados.marrecobot;
@@ -148,15 +152,18 @@ module bot.impl {
     exports com.fernando.breno.trucomarrecobot;
 
     exports com.local.aislan.deyvin;
+    exports com.pedro.herick.skilldiffbot;
+    exports com.fhelippe.ana.tiaodotruco;
+    exports com.gusmao.matos.clojurebot;
     exports com.rafael.lucas.mestrimbot;
     exports com.rennan.podecorrerpatinho;
     exports com.local.abel.francisco.fogao6boca;
     exports com.matheus.dylan.superidolbot;
     exports com.luigivanzella.triathlonBot;
-    exports com.caua.felipe.cfbot;
 
     provides com.bueno.spi.service.BotServiceProvider with
             ArrebentaBot,
+            Trucomante,
             AddTheNewSoul,
             WrkncacnterBot,
             MarrecoBot,
@@ -220,11 +227,14 @@ module bot.impl {
             Lgtbot,
             KwTruco,
             TrucoMarreco,
+            TiaoDoTruco,
+            ClojureBot,
             DeyvinBot,
             Mestrim,
             PodeCorrerPatinho,
             Fogao6Boca,
             CFBot,
             SuperIdolBot,
-            TriathlonBot;
+            TriathlonBot,
+            SkillDiffBot;
 }
