@@ -67,7 +67,7 @@ public class WebApp {
             final UUID user1Uuid = registerUserUseCase.create(user1).uuid();
             final UUID user2Uuid = registerUserUseCase.create(user2).uuid();
             final TransientRemoteBotDto remoteBot = new TransientRemoteBotDto(UUID.randomUUID(), defaultUuid, "Remote Bot", "http://localhost", "8030", "https://github.com/gcontiero11/CTruco");
-            final TransientRemoteBotDto djangoRemoteBot = new TransientRemoteBotDto(UUID.randomUUID(), defaultUuid, "DjangoRemoteBot", "http://localhost", "8000", "https://github.com/gcontiero11/CTruco");
+            final TransientRemoteBotDto djangoRemoteBot = new TransientRemoteBotDto(UUID.randomUUID(), defaultUuid, "DjangoRemoteBot", "http://localhost", "8000", "https://github.com/gcontiero11/DjangoRemoteBot-Code-Base.git");
             botRepository.save(remoteBot);
             botRepository.save(djangoRemoteBot);
             botRepository.authorizeByUuid(remoteBot.uuid());

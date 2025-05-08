@@ -29,6 +29,7 @@ import com.bueno.domain.usecases.bot.providers.RemoteBotApi;
 import com.bueno.domain.usecases.bot.repository.RemoteBotRepository;
 import com.bueno.domain.usecases.bot.usecase.BotUseCase;
 import com.bueno.domain.usecases.game.converter.GameConverter;
+import com.bueno.domain.usecases.game.converter.GameResultConverter;
 import com.bueno.domain.usecases.game.repos.GameRepository;
 import com.bueno.domain.usecases.game.repos.GameResultRepository;
 import com.bueno.domain.usecases.hand.validator.ActionValidator;
@@ -83,6 +84,12 @@ public class PointsProposalUseCase {
         botUseCase.playWhenNecessary(game, botManagerService);
 
         game = gameRepository.findByPlayerUuid(playerUuid).map(GameConverter::fromDto).orElseThrow();
+
+        if (game.isDone()) {
+            gameResultRepository.save(GameResultConverter.toDto(game));
+//            gameRepository.delete(game.getUuid());
+        }
+
         return IntelConverter.toDto(game.getIntel());
     }
 
@@ -98,6 +105,12 @@ public class PointsProposalUseCase {
         botUseCase.playWhenNecessary(game, botManagerService);
 
         game = gameRepository.findByPlayerUuid(playerUuid).map(GameConverter::fromDto).orElseThrow();
+
+        if (game.isDone()) {
+            gameResultRepository.save(GameResultConverter.toDto(game));
+//            gameRepository.delete(game.getUuid());
+        }
+
         return IntelConverter.toDto(game.getIntel());
     }
 
@@ -119,6 +132,12 @@ public class PointsProposalUseCase {
         botUseCase.playWhenNecessary(game, botManagerService);
 
         game = gameRepository.findByPlayerUuid(playerUuid).map(GameConverter::fromDto).orElseThrow();
+
+        if (game.isDone()) {
+            gameResultRepository.save(GameResultConverter.toDto(game));
+//            gameRepository.delete(game.getUuid());
+        }
+
         return IntelConverter.toDto(game.getIntel());
     }
 

@@ -30,6 +30,7 @@ import com.bueno.domain.usecases.bot.providers.RemoteBotApi;
 import com.bueno.domain.usecases.bot.repository.RemoteBotRepository;
 import com.bueno.domain.usecases.bot.usecase.BotUseCase;
 import com.bueno.domain.usecases.game.converter.GameConverter;
+import com.bueno.domain.usecases.game.converter.GameResultConverter;
 import com.bueno.domain.usecases.game.repos.GameRepository;
 import com.bueno.domain.usecases.game.repos.GameResultRepository;
 import com.bueno.domain.usecases.hand.dtos.PlayCardDto;
@@ -106,7 +107,10 @@ public class PlayCardUseCase {
 
         game = gameRepository.findByPlayerUuid(request.uuid()).map(GameConverter::fromDto).orElseThrow();
         IntelDto intelResponse = IntelConverter.toDto(game.getIntel());
-//        if (game.isDone()) gameRepository.delete(game.getUuid());
+        if (game.isDone()) {
+            gameResultRepository.save(GameResultConverter.toDto(game));
+            gameRepository.delete(game.getUuid());
+        }
         return intelResponse;
     }
 }
